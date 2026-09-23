@@ -6,7 +6,7 @@
 
 # Problem Statement & Solution Architecture
 
--->> The Problem
+--> The Problem
 - Managing daily tasks efficiently requires a clear distinction between pending and completed activities without page reloads.
 - Standard inline list apps often lack state persistent visibility, visual accessibility across dark/light environments, and quick operational status controls (e.g., active vs. completed filters).
 
