@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TaskMate - Task Manager</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <div class="card">
+
+    <header>
+      <div class="header-top">
+        <h1>TaskAdder</h1>
+      
+        <button id="themeToggleBtn" class="theme-btn" aria-label="Toggle Theme">🌙</button>
+      </div>
+    </header>
+
+    <main>
+    
+      <section class="input-section">
+        <div class="input-row">
+          <input 
+            type="text" 
+            id="taskInput" 
+            placeholder="PENDING TASKS...UPDATE HERE!" 
+            autocomplete="off" 
+          />
+          <button id="addBtn">Add</button>
+        </div>
+        <p id="errorMessage" class="error-msg"></p>
+      </section>
+
+      <section class="filter-section">
+        <p id="taskCounter">0 tasks total, 0 completed</p>
+        <div class="filter-row">
+          <button id="filterAll" class="filter-btn active-filter">All</button>
+          <button id="filterActive" class="filter-btn">Active</button>
+          <button id="filterCompleted" class="filter-btn">Completed</button>
+        </div>
+      </section>
+
+      <section class="list-section">
+        <ul id="taskList"></ul>
+        <p id="emptyState" class="empty-state">No tasks yet. Add one!</p>
+      </section>
+
+      <div class="clear-container">
+        <button id="clearAllBtn" class="clear-btn">Clear All</button>
+      </div>
+    </main>
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

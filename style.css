@@ -1,0 +1,248 @@
+/* CSS Variables & Theme Configuration
+*/
+:root {
+  --bg-color: #619bd4;
+  --card-bg: #ffffff;
+  --text-color: #333333;
+  --text-muted: #666666;
+  --border-color: #ee3333;
+  --input-bg: #ffffff;
+  --input-border: #cccccc;
+  --primary: #3498db;
+  --primary-hover: #2980b9;
+  --success: #2ecc71;
+  --danger: #e74c3c;
+  --filter-bg: #f8f9fa;
+  --card-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Dark Theme Overrides */
+[data-theme="dark"] {
+  --bg-color: #0f172a;
+  --card-bg: #1e293b;
+  --text-color: #f8fafc;
+  --text-muted: #94a3b8;
+  --border-color: #334155;
+  --input-bg: #0f172a;
+  --input-border: #475569;
+  --filter-bg: #334155;
+  --card-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+}
+
+/* Reset & Global Styles*/
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  padding: 20px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Centered Card Layout & Header */
+.card {
+  max-width: 500px;
+  margin: 0 auto;
+  background-color: var(--card-bg);
+  padding: 24px;
+  border-radius: 8px;
+  box-shadow: var(--card-shadow);
+  border: 1px solid var(--border-color);
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.header-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+header h1 {
+  color: var(--primary);
+}
+
+.theme-btn {
+  background: none;
+  border: none;
+  font-size: 1.25rem;
+  cursor: pointer;
+  padding: 4px;
+  border-radius: 50%;
+  transition: transform 0.2s ease;
+}
+
+.theme-btn:hover {
+  transform: scale(1.15);
+}
+
+/* . Input Row & Error Styling*/
+.input-row {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 4px;
+}
+
+#taskInput {
+  flex: 1;
+  padding: 10px;
+  border: 1px solid var(--input-border);
+  background-color: var(--input-bg);
+  color: var(--text-color);
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+#taskInput:focus {
+  outline: none;
+  border-color: var(--primary);
+}
+
+.error-msg {
+  color: var(--danger);
+  font-size: 14px;
+  min-height: 20px;
+  margin-bottom: 12px;
+}
+
+/* Counter & Filter Button */
+.filter-section {
+  margin-bottom: 16px;
+}
+
+#taskCounter {
+  font-size: 14px;
+  color: var(--text-muted);
+  margin-bottom: 8px;
+}
+
+.filter-row {
+  display: flex;
+  gap: 8px;
+}
+
+.filter-btn {
+  padding: 6px 12px;
+  border: 1px solid var(--border-color);
+  background-color: var(--filter-bg);
+  color: var(--text-color);
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.filter-btn.active-filter {
+  background-color: var(--primary);
+  color: #ffffff;
+  border-color: var(--primary);
+}
+
+/* Base Hover Rule for All Buttons */
+button:hover {
+  opacity: 0.85;
+}
+
+/* Primary Add Button */
+#addBtn {
+  padding: 10px 16px;
+  background-color: var(--primary);
+  color: #ffffff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+/*Task List Items & Dynamic Classes*/
+#taskList {
+  list-style: none;
+  margin-bottom: 16px;
+}
+
+#taskList li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  border-bottom: 1px solid var(--border-color);
+  gap: 8px;
+}
+
+#taskList li span {
+  flex: 1;
+  word-break: break-word;
+}
+
+/* Completed Task Strikethrough & Color Change */
+.completed span {
+  text-decoration: line-through;
+  color: var(--text-muted);
+}
+
+.btn-complete {
+  background-color: var(--success);
+  color: #ffffff;
+  border: none;
+  padding: 6px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.btn-delete {
+  background-color: var(--danger);
+  color: #ffffff;
+  border: none;
+  padding: 6px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+/*Empty State & Clear Container*/
+.empty-state {
+  text-align: center;
+  color: var(--text-muted);
+  margin: 16px 0;
+}
+
+.clear-container {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.clear-btn {
+  background-color: var(--danger);
+  color: #ffffff;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+/*Mobile Responsiveness (Phone Screen Width) */
+@media (max-width: 480px) {
+  .card {
+    padding: 16px;
+  }
+
+  .input-row {
+    flex-direction: column;
+  }
+
+  #addBtn {
+    width: 100%;
+  }
+
+  .filter-row {
+    justify-content: space-between;
+  }
+
+  .filter-btn {
+    flex: 1;
+  }
+}
